@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: salespulse
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      # Pin to the version used by the Dockerfile and CI. pandas 2.2.3 does not support Python 3.14.
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      # Bearer token required by POST /api/v1/datasets/m5/upload (the only protected endpoint).
+      # generateValue makes Render create a random secret on first deploy, so no secret lives in
+      # this repository. Read it in the Render dashboard: service > Environment > M5_UPLOAD_TOKEN.
+      # To choose your own value instead, use  sync: false  in place of  generateValue: true  and enter it in the dashboard.
+      - key: M5_UPLOAD_TOKEN
+        generateValue: true

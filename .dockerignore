@@ -1,0 +1,12 @@
+.venv
+.git
+__pycache__
+.pytest_cache
+data/raw
+mlruns
+*.zip
+.coverage
+.DS_Store
+.env
+.env.*
+!.env.example

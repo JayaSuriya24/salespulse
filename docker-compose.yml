@@ -1,0 +1,14 @@
+services:
+  salespulse:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      # Required to enable POST /api/v1/datasets/m5/upload. Unset/empty/<16 chars => that endpoint answers 503.
+      # Generate and pass one without writing it to a file:
+      #   export M5_UPLOAD_TOKEN=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+      M5_UPLOAD_TOKEN: ${M5_UPLOAD_TOKEN:-}
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./mlruns:/app/mlruns

@@ -1,0 +1,72 @@
+{
+  "best_model": "Linear Regression",
+  "evaluation": "Chronological holdout; final 28 days; row-wise one-step evaluation using observed lag history.",
+  "training_rows": 167130,
+  "test_rows": 2520,
+  "products": 30,
+  "stores": 3,
+  "date_min": "2011-01-29",
+  "date_max": "2016-04-24",
+  "results": [
+    {
+      "model": "Linear Regression",
+      "MAE": 1.3977328488064136,
+      "RMSE": 2.896329703766975,
+      "MAPE": 65.0545756237536,
+      "WAPE": 88.63328583271671,
+      "training_seconds": 0.07,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    },
+    {
+      "model": "Random Forest",
+      "MAE": 1.4252753949819505,
+      "RMSE": 2.9086850235529207,
+      "MAPE": 71.42806111935475,
+      "WAPE": 90.3798187054483,
+      "training_seconds": 18.38,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    },
+    {
+      "model": "Moving Average",
+      "MAE": 1.4683106575963722,
+      "RMSE": 3.0532407228328107,
+      "MAPE": 70.65920908533516,
+      "WAPE": 93.10877848874831,
+      "training_seconds": 0.0,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    },
+    {
+      "model": "Decision Tree",
+      "MAE": 1.5063679959199041,
+      "RMSE": 3.2918595172500322,
+      "MAPE": 75.02774166795221,
+      "WAPE": 95.52207724504676,
+      "training_seconds": 0.6,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    },
+    {
+      "model": "Naive",
+      "MAE": 1.7321428571428572,
+      "RMSE": 3.971275833536591,
+      "MAPE": 99.7505696046656,
+      "WAPE": 109.83895319577253,
+      "training_seconds": 0.0,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    },
+    {
+      "model": "Seasonal Naive",
+      "MAE": 1.8305555555555555,
+      "RMSE": 4.122479990229336,
+      "MAPE": 98.01916369913467,
+      "WAPE": 116.07951685958733,
+      "training_seconds": 0.0,
+      "test_start": "2016-03-28",
+      "test_end": "2016-04-24"
+    }
+  ]
+}
